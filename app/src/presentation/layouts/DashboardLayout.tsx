@@ -1,6 +1,13 @@
 import { Outlet } from "react-router-dom";
-import { menuRoutes } from "../router/router";
 import { SidebarMenuItem } from "../components";
+import { ROUTE_ECOMMERCE , ROUTE_OTHERS} from "../../common/constants";
+import { Route } from "../../interfaces";
+
+
+const menuRoutes:Route[] = [
+  {...ROUTE_ECOMMERCE},
+  {...ROUTE_OTHERS},
+]
 
 export const DashboardLayout = () => {
   return (

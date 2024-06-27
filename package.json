@@ -1,0 +1,13 @@
+{
+  "name": "app-monitor",
+  "version": "1.0.0",
+  "description": "_Frontend de los Monitoreos, en REACT + Vite + Tailwindcss + React Router_",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "npm run start --prefix ./DB/json-server/",
+    "dev2": "npm run start --prefix ./DB/json-server/ & npm run dev --prefix ./app"
+  },
+  "author": "",
+  "license": "ISC"
+}

@@ -1,0 +1,9 @@
+{
+    "commandList": [
+      { "id": "1", "commandName": "Controlar Ventas del Dia", "runPercent": 0 },
+      { "id": "2", "commandName": "Controlar Ventas Mensuales", "runPercent": 0 },
+      { "id": "3", "commandName": "Controlar Ventas Por Equipo", "runPercent": 0 },
+      { "id": "4", "commandName": "Controlar Ventas de Accesorios", "runPercent": 0 }
+
+    ]
+}

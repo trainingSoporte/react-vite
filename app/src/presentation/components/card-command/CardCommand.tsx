@@ -1,11 +1,16 @@
 import { FormEvent, useState } from "react"
-import { RunStatus } from "../../../interfaces";
 import { IconProgressive } from "..";
+import { RunStatus } from "../../../interfaces";
 
 //TODO
 //* Refactor IconProgressive
 
-export const CardCommand = () => {
+interface Props {
+    commandName: string;
+    runPercent: number;
+}
+
+export const CardCommand = ({commandName,runPercent}:Props) => {
     const [runStatus, setRunStatus] = useState<RunStatus>({
         isRunning: false,
         isCheckSuccessfully: undefined
@@ -47,7 +52,8 @@ export const CardCommand = () => {
                 }
             </button>
             <label className="shadow-lg text-sm text-zinc-500 bg-zinc-200 rounded-md p-2 w-4/5">
-                {'Validate Sales'}
+                {commandName}
+                
             </label>
             <div
                 className="pr-4"
@@ -59,7 +65,7 @@ export const CardCommand = () => {
             >
                 {
                     (runStatus.isRunning)
-                        ? <IconProgressive percent={60} />
+                        ? <IconProgressive percent={runPercent} />
                         : (runStatus.isCheckSuccessfully === undefined)
                             ? <IconProgressive percent={0} />
                             : (runStatus.isCheckSuccessfully)
