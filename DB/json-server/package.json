@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "dev": "npx json-server --watch ./db/ecommerce/db.json --port 4000",
     "start": "npx json-server ./db/ecommerce/db.json"
   },
   "author": "",
