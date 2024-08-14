@@ -3,11 +3,14 @@
 import { FormEvent, useState } from "react"
 import { RunStatus } from "@/interfaces";
 import { IconProgressive } from "../icon/IconProgressive";
+import { FaCircleCheck, FaCircleXmark, FaGear, FaGears, FaRotateRight } from "react-icons/fa6";
+import { FaChevronDown, FaPlay } from "react-icons/fa";
 
 
 
 //TODO
 //* Refactor IconProgressive
+// ! fix React Icons
 
 interface Props {
     commandName: string;
@@ -17,7 +20,7 @@ interface Props {
 export const CardCommand = ({commandName,runPercent}:Props) => {
     const [runStatus, setRunStatus] = useState<RunStatus>({
         isRunning: false,
-        isCheckSuccessfully: undefined
+        isCheckSuccessfully: undefined //! modify -> true, false
     })
     const handleRunCommand = (event: FormEvent<HTMLFormElement>) => {
         event.preventDefault();
@@ -33,19 +36,25 @@ export const CardCommand = ({commandName,runPercent}:Props) => {
             className="flex flex-row justify-center items-center gap-2 flex-grow bg-zinc-300 shadow-md
              shadow-zinc-400 hover:shadow-red-200 rounded-md w-11/12 p-1"
         >
+            
             <div
                 className="p-1 pr-2"
             >
-                {
+                {/* {
                     (runStatus.isRunning)
                         ? <i className={"fa-solid fa-gear fa-spin text-sm text-red-300"} ></i>
                         : <i className={"fa-solid fa-gears text-sm text-white"} ></i>
+                } */}
+                {
+                    (runStatus.isRunning)
+                        ?  <div className="text-sm text-red-300 animate-spin"><FaGear /></div>
+                        : <div className="text-sm text-white"><FaGears/></div>
                 }
             </div>
             <button
                 className="shadow-lg text-sm text-zinc-400 bg-zinc-200 hover:bg-zinc-300 hover:text-white rounded-md px-5 py-2"
             >
-                {
+                {/* {
                     (runStatus.isRunning)
                         ? <i className="fa-solid fa-play text-blue-400"></i>
                         : (runStatus.isCheckSuccessfully === undefined)
@@ -53,6 +62,15 @@ export const CardCommand = ({commandName,runPercent}:Props) => {
                             : (runStatus.isCheckSuccessfully)
                                 ? <i className="fa-solid fa-rotate-right"></i>
                                 : <i className="fa-solid fa-chevron-down"></i>
+                } */}
+                {
+                    (runStatus.isRunning)
+                        ? <div className="text-blue-400"><FaPlay/></div>
+                        : (runStatus.isCheckSuccessfully === undefined)
+                            ? <div className=""><FaPlay/></div>
+                            : (runStatus.isCheckSuccessfully)
+                                ? <div className=""><FaRotateRight/></div>
+                                : <div className=""><FaChevronDown/></div>
                 }
             </button>
             <label className="shadow-lg text-sm text-zinc-500 bg-zinc-200 rounded-md p-2 w-4/5">
@@ -73,8 +91,8 @@ export const CardCommand = ({commandName,runPercent}:Props) => {
                         : (runStatus.isCheckSuccessfully === undefined)
                             ? <IconProgressive percent={0} />
                             : (runStatus.isCheckSuccessfully)
-                                ? <i className="fa-solid fa-circle-check px-4 py-2 text-sm text-blue-400"></i>
-                                : <i className="fa-solid fa-circle-xmark px-4 py-2 text-sm text-red-500"></i>
+                                ? <div className="px-4 py-2 text-sm text-blue-400"><FaCircleCheck/></div>
+                                : <div className="px-4 py-2 text-sm text-red-500"><FaCircleXmark/></div>
                 }
             </div>
 

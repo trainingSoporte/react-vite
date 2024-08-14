@@ -7,14 +7,14 @@ const getCommandItemList = async(database:string):Promise<CommandItem[]> => {
      
 }
 
-export default async function EcommerceControlPage() {
+export default async function FintechControlPage() {
 
-    const commandList:CommandItem[] = await getCommandItemList('ecommerce');
+    const commandList:CommandItem[] = await getCommandItemList('billeteras');
 
     return (
         <div className="flex flex-col items-center bg-zinc-200 rounded-md p-2 shadow-lg">
         <div className="text-sm text-blue-400 text-left w-full">
-        Controles de Tienda
+        Controles de Billeteras
         </div>
         <div
           className="flex flex-col gap-2 w-full pl-6 py-2"

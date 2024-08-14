@@ -4,8 +4,9 @@ import { http } from "../../http";
 
 
 export const commandRepository = {
-    getCommandList: async ():Promise<CommandItem[]> => {
-        const commandList = await http.get<CommandDTO[]>('http://localhost:4000/commandList');
+    getCommandList: async (database:string):Promise<CommandItem[]> => {
+        const data = await http.get<{"commandList":CommandDTO[]}>(`http://localhost:4000/${database}`);
+        const commandList:CommandDTO[] = data.commandList
         return commandList.map((commandItem:CommandDTO):CommandItem => ({
             id: commandItem.id,
             commandName:commandItem.commandName,

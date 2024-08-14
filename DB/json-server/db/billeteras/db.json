@@ -1,0 +1,7 @@
+{
+    "commandList": [
+      { "id": "1", "commandName": "Controlar Altas de Usuarios", "runPercent": 0 },
+      { "id": "2", "commandName": "Controlar Compras del dia", "runPercent": 0 },
+      { "id": "3", "commandName": "Controlar Transferencias del dia", "runPercent": 0 }
+    ]
+}

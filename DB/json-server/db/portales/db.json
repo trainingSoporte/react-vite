@@ -1,0 +1,7 @@
+{
+    "commandList": [
+      { "id": "1", "commandName": "Controlar Accesos del Dia", "runPercent": 0 },
+      { "id": "2", "commandName": "Controlar Accesos Mensuales", "runPercent": 0 }
+
+    ]
+}

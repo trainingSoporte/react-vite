@@ -1,15 +1,17 @@
-import { ROUTE_ECOMMERCE,ROUTE_OTHERS} from "@/common/constants"
+import { ROUTE_ECOMMERCE,ROUTE_OTHERS,ROUTE_FINTECH,ROUTE_PORTALS} from "@/common/constants"
 import { Route} from "@/interfaces"
 import { SidebarMenuItem } from "./SidebarMenuItem"
-import {} from 'react-icons'
 import { FaWrench } from "react-icons/fa";
+import { RouteImplements } from "@/interfaces/route.implements";
 
 
+const menuRoutes: RouteImplements[] = [
+  {...ROUTE_ECOMMERCE, iconReact: <FaWrench size={20}/>},
+  {...ROUTE_FINTECH, iconReact: <FaWrench size={20}/>},
+  {...ROUTE_PORTALS, iconReact: <FaWrench size={20}/>},
+  {...ROUTE_OTHERS, iconReact: <FaWrench size={20}/>},
+];
 
-const menuRoutes:Route[] = [
-  {...ROUTE_ECOMMERCE},
-  {...ROUTE_OTHERS},
-]
 
 
 export const Sidebar = () => {

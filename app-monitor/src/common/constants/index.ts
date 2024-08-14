@@ -6,6 +6,22 @@ export const ROUTE_ECOMMERCE =
     description: "Ecommerce controls",
 };
 
+export const ROUTE_FINTECH =
+{
+    path: "/dashboard/fintech",
+    icon: "fa-solid fa-wrench",
+    title: "Billeteras",
+    description: "fintech controls",
+};
+
+export const ROUTE_PORTALS =
+{
+    path: "/dashboard/portals",
+    icon: "fa-solid fa-wrench",
+    title: "Portales",
+    description: "portals controls",
+};
+
 export const ROUTE_OTHERS =
 {
     path: "/dashboard/others",
